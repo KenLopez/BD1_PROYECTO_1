@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="98794FFC-A0D7-11E4-1C75-C252BE02018C" name="EMPLEADO">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:44:08 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_empleado" id="E4577160-13F3-DEB4-E376-AE93B2D9077F">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:44:21 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombres" id="2879BE4E-791A-0C53-07D9-D74301C13A08">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:44:31 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellidos" id="E10BD259-C27F-1308-9131-BB2D82CDAAA6">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:44:41 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="direccion" id="3B2FA232-8B32-A918-2965-BC0110C33B78">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:44:52 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefono" id="4C4F5C35-F2E1-DCCC-520E-F6BFCAEBCE52">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:45:21 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_nac" id="B7E16D24-7F16-11AB-783B-3E8FBD784A7E">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:46:21 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="genero" id="F05148E3-B02C-5534-6BC4-EC24083EAAC6">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:46:37 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_titulo" id="98CE93A3-EC78-4DC2-429F-573B29B07073">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:50:59 UTC</createdTime>
+<generatorID>5E406F83-072D-D5D6-157D-67681857EB17</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="true"/>
+</engineerTo>
+<referedAttribute>E8A8E0D0-0509-B974-86CE-6DDA312D60E5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CA7932DC-FDCE-6601-2806-7C19446C88E1" name="EMPLEADO PK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 05:44:30 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="52A5D979-B696-C340-80B6-12E4A2798330" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E4577160-13F3-DEB4-E376-AE93B2D9077F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

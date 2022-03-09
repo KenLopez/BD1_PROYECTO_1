@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7B59DE31-3C8D-E172-AA69-3A41F2B35555" name="RESULTADO_EVALUACION">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>770FC050-BC48-E760-3551-FA96ABE805BE</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_sintoma" id="656778CF-4675-5EAE-CEF8-FD34E07E7D81">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>874A9EC2-2357-FF3E-C986-A6BDF94F70FB</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5F2B536F-D7ED-6BC3-A3A6-C9B99875DB83" referredColumn="D114A134-75FB-6E87-1B62-3D7D11A9C4A1"/>
+</associations>
+</Column>
+<Column name="id_diagnostico" id="A173B970-214A-7E1A-DDD5-41016A256C68">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>5CF0DCA2-8B6F-4DB2-E12D-B0219B55FA29</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7432D5E3-2939-E84E-558D-865B0A4482D4" referredColumn="4BDE63AC-2C22-6323-02E4-C5055A9B5933"/>
+</associations>
+</Column>
+<Column name="id_resultado" id="7BBDD5D5-39B0-7991-F89C-949AA92F20C0">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>DEE5D24C-0781-A658-366B-40EF2A1E097F</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_evaluacion" id="9E9FC2A2-CA37-EB90-6BF7-36AF5CD618DE">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>C9D1462B-B7EE-AAC8-13BC-EC37468D4B41</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="20D3C0F3-8663-80B4-B686-538C5A799F24" referredColumn="99E58629-D11C-D684-A9BE-726150941808"/>
+</associations>
+</Column>
+<Column name="rango" id="55E429DB-DA69-CA41-3987-199FCDA6CB20">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-09 06:51:39 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1C90E174-2A9B-6252-84AF-518F00EA1FEF" name="RESULTADO_EVALUACION_PK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>64310E4B-ACF4-9E1E-78CE-42A4D98DF496</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7BBDD5D5-39B0-7991-F89C-949AA92F20C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DD5B4A72-97CE-89B0-F721-2091F90CF042" name="RESULTADO_EVALUACION_SINTOMA_FK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>0DF6121B-8F2D-AB86-8549-114A07A092EC</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="656778CF-4675-5EAE-CEF8-FD34E07E7D81"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="30B44ADA-C0EB-1256-369C-F2A6A4D4BEB7" name="RESULTADO_EVALUACION_DIAGNOSTICO_FK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>EE189AED-7BC2-32CC-5DAF-CA7DB432354F</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A173B970-214A-7E1A-DDD5-41016A256C68"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79A0577A-3EF1-31DC-31C9-3E93EAE22DC1" name="RESULTADO_EVALUACION_EVALUACION_FK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>F19D5C70-A889-19E3-6426-415FC1C6AD3B</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9E9FC2A2-CA37-EB90-6BF7-36AF5CD618DE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

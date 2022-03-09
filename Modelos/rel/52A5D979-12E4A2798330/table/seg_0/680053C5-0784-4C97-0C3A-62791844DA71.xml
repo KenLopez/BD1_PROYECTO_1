@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="680053C5-0784-4C97-0C3A-62791844DA71" name="TRATAMIENTO_PACIENTE">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>65624A7A-468D-8A6E-FA02-8BB859665A42</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tratamiento_paciente" id="7DC771A6-A4A6-A4E8-7B92-8A8474609974">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>92613A6D-0464-A474-F564-0A7A94EDC865</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_paciente" id="4EBCFF8F-F964-2E25-39E0-10D144CB285D">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>BB33F418-225A-2AB0-413C-9CF7F88FC2A6</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1087EA59-588C-4536-D2D4-53779D93B2A0" referredColumn="9FE15B78-D313-AE34-C3A9-F694A591027A"/>
+</associations>
+</Column>
+<Column name="id_tratamiento" id="3762F1E9-5F22-E173-AA54-4431044B734A">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>6CE0D55C-3C5D-0B36-C210-42A8CEE75C87</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B1D04A97-A9F4-E807-161A-7DD2B8C63550" referredColumn="39B43C1F-4A0B-4773-7963-D718839622DD"/>
+</associations>
+</Column>
+<Column name="fecha" id="67A1557A-6F24-85A3-7A48-9397D9691C54">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-09 02:33:43 UTC</createdTime>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B8B8A775-1203-522A-6F2B-7E2C590DCDCC" name="TRATAMIENTO_PACIENTE_PK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>4B61F90F-A8C8-3F2D-E894-03A252790566</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DC771A6-A4A6-A4E8-7B92-8A8474609974"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="946B2AA2-B9A1-5EA1-ABF3-9B681EED1BFC" name="TRATAMIENTO_PACIENTE_PACIENTE_FK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>0A8A3125-CBCA-3564-4AAC-B81A5B4816FE</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4EBCFF8F-F964-2E25-39E0-10D144CB285D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AE36A63C-B639-C369-23A1-E2274DD28E90" name="TRATAMIENTO_PACIENTE_TRATAMIENTO_FK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>96C98CE4-50AD-AC63-BEA6-C1370776068D</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3762F1E9-5F22-E173-AA54-4431044B734A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

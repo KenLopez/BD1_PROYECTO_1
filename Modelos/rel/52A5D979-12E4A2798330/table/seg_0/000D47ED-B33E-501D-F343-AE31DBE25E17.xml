@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="000D47ED-B33E-501D-F343-AE31DBE25E17" name="PACIENTE">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>B6043B54-A9CE-46EF-6B22-AA54AD51600B</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_paciente" id="9FE15B78-D313-AE34-C3A9-F694A591027A">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>8BAFBCBA-93F7-3B26-EF74-718FAF4AE233</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombres" id="421E2425-4506-BBE0-1AD0-F49128DEDC6D">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>3197294F-99CF-33E3-B0D1-427105D0BBD1</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellidos" id="070E16C3-ED8D-CADE-3E6B-E066F5D2C786">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>153DD377-833A-1D37-B9E1-4A295450A71E</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="direccion" id="41FBEE2F-4B5F-4855-43F2-ADA648B612FF">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>A639B6F0-8A32-AA2C-05EB-BED3EAC82F18</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefono" id="7047DB8E-510C-C219-D949-42A5D6C8FFEC">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>3BEED4BE-8C09-10BC-C319-5917989749CB</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_nac" id="4EA76491-84C7-058D-F486-90EE0C964895">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>8149B7AE-C7A7-FD36-F02E-50C1D3025CED</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="genero" id="EE85A025-BB76-BC80-8383-08EEDDCB0428">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>D8642DB9-82B0-0117-FB2E-708EB58ACDF1</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="altura" id="0ADAAA2E-6780-6B54-D808-2014D1306FCE">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>84E9AA59-8721-7B18-F064-619F8761E991</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="peso" id="9206BAE8-53A7-7197-A398-5BFF8FAB779C">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>52CDDB7A-8477-B8FC-537A-3862C42FFFC5</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3F05FA6D-5951-6570-97E5-D0D8C161CE6A" name="PACIENTE_PK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>DC621303-3A15-04C1-7620-157824713D97</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9FE15B78-D313-AE34-C3A9-F694A591027A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

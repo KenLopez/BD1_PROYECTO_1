@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F45705BF-66D6-C5CD-4256-9EA05A8EC8C5" name="EVALUACION">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>96356519-C2D9-368C-DC8B-70F8CFBCD85C</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_evaluacion" id="99E58629-D11C-D684-A9BE-726150941808">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>9AACD2CE-AF1C-3340-9427-51F418DB4CA4</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="80F75493-2FE6-3C23-1000-93D81298285F">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>88AAEF68-381C-94A3-261F-BE02FC172C9D</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_empleado" id="3F1D000B-C945-DFA5-5B16-C8240AC57298">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>ABA9CC93-304F-3614-6F9E-2BF6282B23AD</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F122217-E6C2-978B-6978-DDD316CDB3CF" referredColumn="A9EBA5EE-23B6-BE68-7A44-1A12E5D2628F"/>
+</associations>
+</Column>
+<Column name="id_paciente" id="BEBBE4DC-690C-8C3D-8C0B-430286BB4D24">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>6278918E-83D7-7883-4DE5-6D0C4A9FDBCE</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5005226A-C807-3313-6CD5-0F78D13BF085" referredColumn="9FE15B78-D313-AE34-C3A9-F694A591027A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BCAC5662-0C54-8D12-F128-B9233BE2E3A5" name="EVALUACION_PK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>99C01038-89DA-A2F8-E346-A5E98632840A</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99E58629-D11C-D684-A9BE-726150941808"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2B0B9C36-5618-C014-3B6D-0A2097866ABA" name="EVALUACION_EMPLEADO_FK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>85E69CD0-50DB-B407-4F63-5048D79ADA6F</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F1D000B-C945-DFA5-5B16-C8240AC57298"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D505E1E2-0589-5435-C343-3715A3C2E830" name="EVALUACION_PACIENTE_FK">
+<createdBy>khlop</createdBy>
+<createdTime>2022-03-08 06:10:31 UTC</createdTime>
+<generatorID>649B5E4D-A5A1-B9E1-FDD8-11C66B26BC67</generatorID>
+<ownerDesignName>Modelos</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BEBBE4DC-690C-8C3D-8C0B-430286BB4D24"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
