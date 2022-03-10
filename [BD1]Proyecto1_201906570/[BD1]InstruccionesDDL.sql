@@ -46,8 +46,8 @@ CREATE TABLE EMPLEADO (
     genero CHAR(1) NOT NULL,
     id_titulo INTEGER NOT NULL,
     PRIMARY KEY(id_empleado),
-    FOREIGN KEY(id_titulo) REFERENCES TITULO(id_titulo)
-    CONSTRAINT check_genero CHECK (genero = 'M' OR genero = 'F')
+    FOREIGN KEY(id_titulo) REFERENCES TITULO(id_titulo),
+    CONSTRAINT check_genero_empleado CHECK (genero = 'M' OR genero = 'F')
 );
 
 CREATE TABLE PACIENTE (
@@ -60,8 +60,8 @@ CREATE TABLE PACIENTE (
     genero CHAR(1) NOT NULL,
     altura FLOAT NOT NULL, 
     peso FLOAT NOT NULL,
-    PRIMARY KEY(id_paciente)
-    CONSTRAINT check_genero CHECK (genero = 'M' OR genero = 'F')
+    PRIMARY KEY(id_paciente),
+    CONSTRAINT check_genero_paciente CHECK (genero = 'M' OR genero = 'F')
 );
 
 CREATE TABLE EVALUACION (

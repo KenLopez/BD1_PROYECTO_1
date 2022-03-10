@@ -96,7 +96,7 @@ INSERT INTO TRATAMIENTO_PACIENTE(
     id_paciente,
     id_tratamiento
 )
-    SELECT DISTINCT 
+    SELECT  
         TO_DATE(FECHA_TRATAMIENTO,'YYYY-MM-DD'),
         id_paciente,
         id_tratamiento
@@ -115,7 +115,7 @@ INSERT INTO RESULTADO_EVALUACION(
     id_evaluacion,
     rango
 )
-    SELECT DISTINCT
+    SELECT
         id_sintoma,
         id_diagnostico,
         id_evaluacion,
