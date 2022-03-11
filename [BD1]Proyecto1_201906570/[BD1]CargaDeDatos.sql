@@ -40,7 +40,7 @@ INSERT INTO EMPLEADO(
         NOMBRE_EMPLEADO,
         APELLIDO_EMPLEADO,
         DIRECCION_EMPLEADO,
-        TO_NUMBER(REPLACE( TELEFONO_EMPLEADO, '-', '' )),
+        REPLACE( TELEFONO_EMPLEADO, '-', '' ),
         TO_DATE(FECHA_NACIMIENTO_EMPLEADO,'YYYY-MM-DD'),
         GENERO_EMPLEADO,
         id_titulo
@@ -63,7 +63,7 @@ INSERT INTO PACIENTE(
         NOMBRE_PACIENTE,
         APELLIDO_PACIENTE,
         DIRECCION_PACIENTE,
-        TO_NUMBER(REPLACE( TELEFONO_PACIENTE, '-', '' )),
+        REPLACE( TELEFONO_PACIENTE, '-', '' ),
         TO_DATE(FECHA_NACIMIENTO_PACIENTE,'YYYY-MM-DD'),
         GENERO_PACIENTE,
         TO_NUMBER(ALTURA),
@@ -96,7 +96,7 @@ INSERT INTO TRATAMIENTO_PACIENTE(
     id_paciente,
     id_tratamiento
 )
-    SELECT  
+    SELECT DISTINCT
         TO_DATE(FECHA_TRATAMIENTO,'YYYY-MM-DD'),
         id_paciente,
         id_tratamiento
@@ -115,7 +115,7 @@ INSERT INTO RESULTADO_EVALUACION(
     id_evaluacion,
     rango
 )
-    SELECT
+    SELECT DISTINCT
         id_sintoma,
         id_diagnostico,
         id_evaluacion,

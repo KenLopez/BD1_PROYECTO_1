@@ -26,7 +26,6 @@ WHERE
 GROUP BY evaluacion.id_empleado
 HAVING 
     count(evaluacion.id_paciente) > 3
-ORDER BY pacientes_atendidos DESC
 ;
 
 /* 3 */
@@ -63,13 +62,13 @@ ORDER BY count(tp.id_tratamiento_paciente) DESC
 FETCH NEXT 5 ROWS WITH TIES
 ;
 
-SELECT nombres, apellidos, COUNT(fecha) cantidad
+SELECT nombres, apellidos, count(fecha) cantidad
 FROM (
-    SELECT P.nombres, P.apellidos, B.fecha
-    FROM paciente P, tratamiento T, tratamiento_paciente B
-    WHERE P.id_paciente = B.id_paciente
-        AND T.id_tratamiento = B.id_tratamiento
-        AND T.nombre = 'Antidepresivos'
+    SELECT p.nombres, p.apellidos, tp.fecha
+    FROM paciente p, tratamiento t, tratamiento_paciente tp
+    WHERE p.id_paciente = tp.id_paciente
+        AND t.id_tratamiento = tp.id_tratamiento
+        AND t.nombre = 'Antidepresivos'
 )
 GROUP BY nombres, apellidos
 ORDER BY cantidad DESC
@@ -77,9 +76,25 @@ FETCH FIRST 5 ROWS ONLY;
 
 
 /* 5 */
+SELECT 
+    max(p.nombres) nombre, 
+    max(p.apellidos) apellido,
+    max(p.direccion) direccion,
+    count(tp.id_tratamiento_paciente) cantidad_tratamientos
+FROM paciente p, tratamiento_paciente tp
+WHERE 
+    NOT EXISTS (
+        SELECT e.id_paciente
+        FROM evaluacion e
+        WHERE e.id_paciente = p.id_paciente
+    )
+    AND tp.id_paciente = p.id_paciente
+GROUP BY p.id_paciente
+HAVING count(tp.id_tratamiento_paciente) > 3
+;
 
 /* 6 */
-SELECT max(d.nombre), count(re.id_sintoma) cantidad
+SELECT max(d.nombre) descripcion, count(re.id_sintoma) cantidad
 FROM resultado_evaluacion re, diagnostico d
 WHERE
     re.id_diagnostico = d.id_diagnostico
@@ -126,14 +141,16 @@ WITH a AS (
     FROM evaluacion e
     WHERE extract(year from e.fecha) >= 2017
 )
-SELECT nombre, apellido, round(atendidos / a.total*100, 2) porcentaje
+SELECT nombre, apellido, round(atendidos/a.total*100, 2) porcentaje
 FROM(
     SELECT 
         max(e.nombres) nombre, 
         max(e.apellidos) apellido, 
         count(ev.id_evaluacion) atendidos
     FROM empleado e, evaluacion ev
-    WHERE e.id_empleado = ev.id_empleado
+    WHERE 
+        e.id_empleado = ev.id_empleado
+        AND extract(year from ev.fecha) >= 2017
     GROUP BY e.id_empleado
 ), a
 ORDER BY atendidos / a.total * 100 DESC
@@ -156,3 +173,36 @@ ORDER BY porcentaje DESC
 ;
 
 /* 11 */
+SELECT * FROM (
+    (
+        SELECT 
+            max(extract(year from tp.fecha)) año, 
+            max(extract(month from tp.fecha)) mes,
+            max(p.nombres) nombre,
+            max(p.apellidos) apellido,
+            count(tp.fecha) cantidad_tratamiento
+        FROM tratamiento_paciente tp, paciente p
+        WHERE tp.id_paciente = p.id_paciente
+        GROUP BY
+            p.id_paciente
+        ORDER BY count(tp.fecha) DESC
+        FETCH NEXT 1 ROW ONLY
+    )UNION(
+        SELECT 
+            max(extract(year from tp.fecha)) año, 
+            max(extract(month from tp.fecha)) mes,
+            max(p.nombres) nombre,
+            max(p.apellidos) apellido,
+            count(tp.fecha) cantidad_tratamiento
+        FROM tratamiento_paciente tp, paciente p
+        WHERE tp.id_paciente = p.id_paciente
+        GROUP BY
+            extract(year from tp.fecha),
+            extract(month from tp.fecha),
+            p.id_paciente
+        ORDER BY count(tp.fecha) ASC
+        FETCH NEXT 1 ROW ONLY
+    )
+)
+ORDER BY cantidad_tratamiento DESC
+;
