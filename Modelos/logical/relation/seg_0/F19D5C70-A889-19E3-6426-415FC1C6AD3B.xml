@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_6" directorySegmentName="seg_0" id="F19D5C70-A889-19E3-6426-415FC1C6AD3B">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="RESULTADO EVALUACION EVALUACION FK" directorySegmentName="seg_0" id="F19D5C70-A889-19E3-6426-415FC1C6AD3B">
 <createdBy>khlop</createdBy>
 <createdTime>2022-03-08 06:03:11 UTC</createdTime>
 <ownerDesignName>Modelos</ownerDesignName>

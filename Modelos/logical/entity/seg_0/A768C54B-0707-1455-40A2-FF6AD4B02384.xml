@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_sintoma" id="1025FA35-9E87-AF7C-981C-62C534163186">
+<Attribute name="id sintoma" id="1025FA35-9E87-AF7C-981C-62C534163186">
 <createdBy>khlop</createdBy>
 <createdTime>2022-03-08 05:54:07 UTC</createdTime>
 <ownerDesignName>Modelos</ownerDesignName>

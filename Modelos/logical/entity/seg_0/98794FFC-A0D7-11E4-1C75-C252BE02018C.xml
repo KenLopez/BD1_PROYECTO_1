@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_empleado" id="E4577160-13F3-DEB4-E376-AE93B2D9077F">
+<Attribute name="id empleado" id="E4577160-13F3-DEB4-E376-AE93B2D9077F">
 <createdBy>khlop</createdBy>
 <createdTime>2022-03-08 05:44:21 UTC</createdTime>
 <ownerDesignName>Modelos</ownerDesignName>
@@ -75,10 +75,11 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fecha_nac" id="B7E16D24-7F16-11AB-783B-3E8FBD784A7E">
+<Attribute name="fecha nac" id="B7E16D24-7F16-11AB-783B-3E8FBD784A7E">
 <createdBy>khlop</createdBy>
 <createdTime>2022-03-08 05:46:21 UTC</createdTime>
 <ownerDesignName>Modelos</ownerDesignName>
@@ -103,7 +104,7 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_titulo" id="98CE93A3-EC78-4DC2-429F-573B29B07073">
+<Attribute name="id titulo" id="98CE93A3-EC78-4DC2-429F-573B29B07073">
 <createdBy>khlop</createdBy>
 <createdTime>2022-03-08 05:50:59 UTC</createdTime>
 <generatorID>5E406F83-072D-D5D6-157D-67681857EB17</generatorID>

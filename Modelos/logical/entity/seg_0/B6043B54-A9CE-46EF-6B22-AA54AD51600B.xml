@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_paciente" id="8BAFBCBA-93F7-3B26-EF74-718FAF4AE233">
+<Attribute name="id paciente" id="8BAFBCBA-93F7-3B26-EF74-718FAF4AE233">
 <createdBy>khlop</createdBy>
 <createdTime>2022-03-08 05:47:49 UTC</createdTime>
 <ownerDesignName>Modelos</ownerDesignName>
@@ -75,10 +75,11 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fecha_nac" id="8149B7AE-C7A7-FD36-F02E-50C1D3025CED">
+<Attribute name="fecha nac" id="8149B7AE-C7A7-FD36-F02E-50C1D3025CED">
 <createdBy>khlop</createdBy>
 <createdTime>2022-03-08 05:48:49 UTC</createdTime>
 <ownerDesignName>Modelos</ownerDesignName>

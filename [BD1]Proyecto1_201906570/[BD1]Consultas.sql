@@ -90,10 +90,11 @@ FROM (
 diagnostico d 
 where id_d = d.id_diagnostico
 GROUP BY id_d
-ORDER BY 2 DESC;
+ORDER BY 2 DESC
+;
 
 /* 7 */
-SELECT p.nombres, p.apellidos, p.direccion
+SELECT DISTINCT p.nombres, p.apellidos, p.direccion
 FROM paciente p
 WHERE EXISTS (
     SELECT re.id_resultado
