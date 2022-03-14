@@ -1,2 +1,6 @@
 *.bad
 *.log
+**/*.localz
+**/*.local
+**/*.git
+**/*.DS_Store

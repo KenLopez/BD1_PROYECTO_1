@@ -50,7 +50,7 @@ WHERE
 ;
 
 
-/* 4 (NO VERIFICADA)*/
+/* 4 */
 SELECT max(nombres) nombre, max(apellidos) apellido, count(tp.id_tratamiento_paciente) cantidad
 FROM paciente p, tratamiento_paciente tp, tratamiento t
 WHERE
@@ -58,22 +58,9 @@ WHERE
     AND tp.id_tratamiento = t.id_tratamiento
     AND t.nombre = 'Antidepresivos'
 GROUP BY p.id_paciente
-ORDER BY count(tp.id_tratamiento_paciente) DESC
-FETCH NEXT 5 ROWS WITH TIES
+ORDER BY 3 DESC
+FETCH NEXT 5 ROWS ONLY
 ;
-
-SELECT nombres, apellidos, count(fecha) cantidad
-FROM (
-    SELECT p.nombres, p.apellidos, tp.fecha
-    FROM paciente p, tratamiento t, tratamiento_paciente tp
-    WHERE p.id_paciente = tp.id_paciente
-        AND t.id_tratamiento = tp.id_tratamiento
-        AND t.nombre = 'Antidepresivos'
-)
-GROUP BY nombres, apellidos
-ORDER BY cantidad DESC
-FETCH FIRST 5 ROWS ONLY;
-
 
 /* 5 */
 SELECT 
@@ -94,14 +81,16 @@ HAVING count(tp.id_tratamiento_paciente) > 3
 ;
 
 /* 6 */
-SELECT max(d.nombre) descripcion, count(re.id_sintoma) cantidad
-FROM resultado_evaluacion re, diagnostico d
-WHERE
-    re.id_diagnostico = d.id_diagnostico
-    AND re.rango = 9
-GROUP BY re.id_diagnostico
-ORDER BY count(re.id_sintoma) DESC
-;
+SELECT MAX(d.nombre) descripcion, COUNT(id_sintoma) cantidad
+FROM (
+    SELECT DISTINCT id_diagnostico id_d, id_sintoma 
+        FROM resultado_evaluacion 
+    WHERE rango = 9
+),
+diagnostico d 
+where id_d = d.id_diagnostico
+GROUP BY id_d
+ORDER BY 2 DESC;
 
 /* 7 */
 SELECT p.nombres, p.apellidos, p.direccion
@@ -139,7 +128,6 @@ WHERE atendidos > 2
 WITH a AS (
     SELECT count(e.id_evaluacion) total
     FROM evaluacion e
-    WHERE extract(year from e.fecha) >= 2017
 )
 SELECT nombre, apellido, round(atendidos/a.total*100, 2) porcentaje
 FROM(
@@ -153,7 +141,7 @@ FROM(
         AND extract(year from ev.fecha) >= 2017
     GROUP BY e.id_empleado
 ), a
-ORDER BY atendidos / a.total * 100 DESC
+ORDER BY 3 DESC
 ;
 
 /* 10 */
@@ -173,36 +161,48 @@ ORDER BY porcentaje DESC
 ;
 
 /* 11 */
-SELECT * FROM (
-    (
+SELECT año, mes, nombre, apellido, cantidad_tratamiento FROM (
+    SELECT 
+        extract(year from e.fecha) año, 
+        extract(month from e.fecha) mes,
+        p.nombre,
+        p.apellido, 
+        p.cantidad_tratamiento
+    FROM evaluacion e, (
         SELECT 
-            max(extract(year from tp.fecha)) año, 
-            max(extract(month from tp.fecha)) mes,
-            max(p.nombres) nombre,
-            max(p.apellidos) apellido,
-            count(tp.fecha) cantidad_tratamiento
-        FROM tratamiento_paciente tp, paciente p
-        WHERE tp.id_paciente = p.id_paciente
-        GROUP BY
-            p.id_paciente
-        ORDER BY count(tp.fecha) DESC
-        FETCH NEXT 1 ROW ONLY
-    )UNION(
+                max(p.id_paciente) id_paciente,
+                max(p.nombres) nombre,
+                max(p.apellidos) apellido,
+                count(tp.fecha) cantidad_tratamiento
+            FROM tratamiento_paciente tp, paciente p
+            WHERE tp.id_paciente = p.id_paciente
+            GROUP BY
+                p.id_paciente
+            ORDER BY count(tp.fecha) DESC
+            FETCH NEXT 1 ROW WITH TIES
+    ) p
+    WHERE e.id_paciente = p.id_paciente
+)UNION(
+    SELECT 
+        extract(year from e.fecha) año, 
+        extract(month from e.fecha) mes,
+        p.nombre,
+        p.apellido, 
+        p.cantidad_tratamiento
+    FROM evaluacion e, (
         SELECT 
-            max(extract(year from tp.fecha)) año, 
-            max(extract(month from tp.fecha)) mes,
-            max(p.nombres) nombre,
-            max(p.apellidos) apellido,
-            count(tp.fecha) cantidad_tratamiento
-        FROM tratamiento_paciente tp, paciente p
-        WHERE tp.id_paciente = p.id_paciente
-        GROUP BY
-            extract(year from tp.fecha),
-            extract(month from tp.fecha),
-            p.id_paciente
-        ORDER BY count(tp.fecha) ASC
-        FETCH NEXT 1 ROW ONLY
-    )
+                max(p.id_paciente) id_paciente,
+                max(p.nombres) nombre,
+                max(p.apellidos) apellido,
+                count(tp.fecha) cantidad_tratamiento
+            FROM tratamiento_paciente tp, paciente p
+            WHERE tp.id_paciente = p.id_paciente
+            GROUP BY
+                p.id_paciente
+            ORDER BY count(tp.fecha) ASC
+            FETCH NEXT 1 ROW WITH TIES
+    ) p
+    WHERE e.id_paciente = p.id_paciente
 )
 ORDER BY cantidad_tratamiento DESC
 ;
