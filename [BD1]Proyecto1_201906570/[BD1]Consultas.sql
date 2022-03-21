@@ -1,4 +1,5 @@
-/* 1 */
+/* 1 Mostrar el nombre, apellido y teléfono de todos los empleados y la cantidad
+de pacientes atendidos por cada empleado ordenados de mayor a menor. */
 SELECT 
     max(nombres) nombre, 
     max(apellidos) apellido, 
@@ -10,7 +11,8 @@ GROUP BY evaluacion.id_empleado
 ORDER BY pacientes_atendidos DESC
 ;
 
-/* 2 */
+/* 2 Mostrar el nombre, apellido, dirección y título de todos los empleados de sexo
+masculino que atendieron a más de 3 pacientes en el año 2016. */
 SELECT 
     max(nombres) nombre, 
     max(apellidos) apellido, 
@@ -28,7 +30,8 @@ HAVING
     count(evaluacion.id_paciente) > 3
 ;
 
-/* 3 */
+/* 3 Mostrar el nombre y apellido de todos los pacientes que se están aplicando el
+tratamiento “Tabaco en polvo” y que tuvieron el síntoma “Dolor de cabeza”. */
 SELECT DISTINCT nombres, apellidos
 FROM paciente p
 WHERE 
@@ -50,7 +53,8 @@ WHERE
 ;
 
 
-/* 4 */
+/* 4 Top 5 de pacientes que más tratamientos se han aplicado del tratamiento
+“Antidepresivos”. Mostrar nombre, apellido y la cantidad de tratamientos. */
 SELECT max(nombres) nombre, max(apellidos) apellido, count(tp.id_tratamiento_paciente) cantidad
 FROM paciente p, tratamiento_paciente tp, tratamiento t
 WHERE
@@ -62,7 +66,11 @@ ORDER BY 3 DESC
 FETCH NEXT 5 ROWS ONLY
 ;
 
-/* 5 */
+/* 5 Mostrar el nombre, apellido y dirección de todos los pacientes que se hayan
+aplicado más de 3 tratamientos y no hayan sido atendidos por un
+empleado. Debe mostrar la cantidad de tratamientos que se aplicó el
+paciente. Ordenar los resultados de mayor a menor utilizando la cantidad de
+tratamientos. */
 SELECT 
     max(p.nombres) nombre, 
     max(p.apellidos) apellido,
@@ -80,7 +88,9 @@ GROUP BY p.id_paciente
 HAVING count(tp.id_tratamiento_paciente) > 3
 ;
 
-/* 6 */
+/* 6 Mostrar el nombre del diagnóstico y la cantidad de síntomas a los que ha sido
+asignado donde el rango ha sido de 9. Ordene sus resultados de mayor a
+menor en base a la cantidad de síntomas. */
 SELECT MAX(d.nombre) descripcion, COUNT(id_sintoma) cantidad
 FROM (
     SELECT DISTINCT id_diagnostico id_d, id_sintoma 
@@ -93,7 +103,10 @@ GROUP BY id_d
 ORDER BY 2 DESC
 ;
 
-/* 7 */
+/* 7 Mostrar el nombre, apellido y dirección de todos los pacientes que
+presentaron un síntoma que al que le fue asignado un diagnóstico con un
+rango mayor a 5. Debe mostrar los resultados en orden alfabético tomando
+en cuenta el nombre y apellido del paciente. */
 SELECT DISTINCT p.nombres, p.apellidos, p.direccion
 FROM paciente p
 WHERE EXISTS (
@@ -107,7 +120,10 @@ WHERE EXISTS (
 ORDER BY p.nombres, p.apellidos
 ;
 
-/* 8 */
+/* 8 Mostrar el nombre, apellido y fecha de nacimiento de todos los empleados de
+sexo femenino cuya dirección es “1475 Dryden Crossing” y hayan atendido
+por lo menos a 2 pacientes. Mostrar la cantidad de pacientes atendidos por
+el empleado y ordénelos de mayor a menor. */
 SELECT nombre, apellido, fecha_nacimiento, atendidos 
 FROM(
     SELECT 
@@ -125,7 +141,8 @@ FROM(
 WHERE atendidos > 2
 ;
 
-/* 9 */
+/* 9 Mostrar el porcentaje de pacientes que ha atendido cada empleado a partir
+del año 2017 y mostrarlos de mayor a menor en base al porcentaje calculado. */
 WITH a AS (
     SELECT count(e.id_evaluacion) total
     FROM evaluacion e
@@ -145,7 +162,9 @@ FROM(
 ORDER BY 3 DESC
 ;
 
-/* 10 */
+/* 10 .Mostrar el porcentaje del título de empleado más común de la siguiente
+manera: nombre del título, porcentaje de empleados que tienen ese
+título. Debe ordenar los resultados en base al porcentaje de mayor a menor. */
 WITH conteo AS(
     SELECT count(id_empleado) total
     FROM empleado
@@ -161,10 +180,13 @@ FROM(
 ORDER BY porcentaje DESC
 ;
 
-/* 11 */
-SELECT año, mes, nombre, apellido, cantidad_tratamiento FROM (
+/* 11 Mostrar el año y mes (de la fecha de evaluación) junto con el nombre y
+apellido de los pacientes que más tratamientos se han aplicado y los que
+menos. (Todo en una sola consulta). Nota: debe tomar como cantidad
+mínima 1 tratamiento. */
+SELECT anio, mes, nombre, apellido, cantidad_tratamiento FROM (
     SELECT 
-        extract(year from e.fecha) año, 
+        extract(year from e.fecha) anio, 
         extract(month from e.fecha) mes,
         p.nombre,
         p.apellido, 
@@ -179,13 +201,13 @@ SELECT año, mes, nombre, apellido, cantidad_tratamiento FROM (
             WHERE tp.id_paciente = p.id_paciente
             GROUP BY
                 p.id_paciente
-            ORDER BY count(tp.fecha) DESC
+            ORDER BY 4 DESC
             FETCH NEXT 1 ROW WITH TIES
     ) p
     WHERE e.id_paciente = p.id_paciente
 )UNION(
     SELECT 
-        extract(year from e.fecha) año, 
+        extract(year from e.fecha) anio, 
         extract(month from e.fecha) mes,
         p.nombre,
         p.apellido, 
@@ -200,7 +222,7 @@ SELECT año, mes, nombre, apellido, cantidad_tratamiento FROM (
             WHERE tp.id_paciente = p.id_paciente
             GROUP BY
                 p.id_paciente
-            ORDER BY count(tp.fecha) ASC
+            ORDER BY 4 ASC
             FETCH NEXT 1 ROW WITH TIES
     ) p
     WHERE e.id_paciente = p.id_paciente
